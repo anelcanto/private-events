@@ -1,8 +1,27 @@
 <h1 class="title">Events</h1>
-
 <br/>
-<ul>
-    <% @events.each do |event| %>
-    <li><strong><%= event.location %> </strong><%= "on "+ event.date.strftime("%B %d, %Y") if !event.date.nil? %>  </li>
-    <% end %>
-</ul>
+
+<% @events.each do |event| %>
+  <div class="card box">
+    <div class="card-content">
+      <p class="title">
+        <%= event.location %>
+      </p>
+      <p class="subtitle">
+        <%= "on "+ event.date.strftime("%B %d, %Y") if !event.date.nil? %> 
+      </p>
+    </div>
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        <span>
+          <a href="#">View</a>
+        </span>
+      </p>
+      <p class="card-footer-item">
+        <span>
+          <a href="#">Share</a>
+        </span>
+      </p>
+    </footer>
+  </div>
+<% end %>

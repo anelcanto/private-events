@@ -1,9 +1,8 @@
-<h1 class="title">Events#index</h1>
-<p class="subtitle">Find me in app/views/events/index.html.erb</p>
+<h1 class="title">Events</h1>
 
-
+<br/>
 <ul>
     <% @events.each do |event| %>
-    <li><%= event.location %> in <%= event.location %> on <%= event.date.strftime("%B %d, %Y") %>  </li>
+    <li><strong><%= event.location %> </strong><%= "on "+ event.date.strftime("%B %d, %Y") if !event.date.nil? %>  </li>
     <% end %>
 </ul>

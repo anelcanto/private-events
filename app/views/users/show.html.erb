@@ -1,0 +1,4 @@
+<h1 class="title">My events</h1>
+<% current_user.events.each do |event| %>
+   <%= render 'events/list', event: event %>
+<% end %>

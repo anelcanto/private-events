@@ -10,14 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_26_094307) do
+ActiveRecord::Schema.define(version: 2021_09_28_071113) do
 
-  create_table "events", force: :cascade do |t|
-    t.string "location"
-    t.datetime "date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+# Could not dump table "events" because of following StandardError
+#   Unknown type 'reference' for column 'creator_id'
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

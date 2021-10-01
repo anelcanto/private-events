@@ -1,8 +1,8 @@
 <h1 class="title">Events</h1>
-<br/>
-
-<% @events.each do |event| %>
-  <%= render 'list', event: event %>
-  <%= event.location%>
-  <%= current_user.email%>
+<%if user_signed_in? %>
+  <% @events.each do |event| %>
+  <br>
+    <%= render 'list', event: event %>
+  <% end %>
+  <br>
 <% end %>

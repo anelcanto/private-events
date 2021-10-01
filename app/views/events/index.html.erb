@@ -1,7 +1,8 @@
 <h1 class="title">Events</h1>
+<%= link_to  "Create event", events_new_path, class:"btn btn-primary btn-lg" %> <br>
+
 <%if user_signed_in? %>
   <% @events.each do |event| %>
-  <br>
     <%= render 'list', event: event %>
   <% end %>
   <br>

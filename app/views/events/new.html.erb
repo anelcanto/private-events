@@ -1,1 +1,7 @@
-<h1>new</h1>
+<h1>New Event</h1>
+
+<%= simple_form_for @event do |f| %>
+    <%= f.input :location, label: "Location: " %>
+    <%= f.date_field :date, label: "Date" %>
+    <%= f.submit %>
+<% end %>

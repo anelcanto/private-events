@@ -9,7 +9,7 @@
     </div>
     <div class="navbar-nav">
       <% if user_signed_in?%>
-        <a class="nav-item nav-link disabledq" href="#">Hello User</a>
+        <a class="nav-item nav-link disabledq" href="#">Hello <%= current_user.email %></a>
         <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-primary mr-2" %>
       <% else %>
       <%= link_to  "Login", new_user_session_path, class:"btn btn-outline-dark mr-2" %>

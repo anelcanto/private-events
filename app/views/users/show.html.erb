@@ -1,8 +1,7 @@
-<%# before %>
 <h1 class="title">My events</h1>
 <%= link_to  "Create event", events_new_path, class:"btn btn-primary btn-lg" %>
 <br>
 
-<% current_user.events.each do |event| %>
-   <%= render 'events/list', event: event %>
-<% end %>
+   <% current_user.created_events.each do |event| %>
+      <%= render 'events/list', event: event %>
+   <% end %>

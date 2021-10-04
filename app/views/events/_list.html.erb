@@ -2,11 +2,15 @@
 <div class="card">
   <div class="card-header">
     
-  <%= event.date.strftime('%c') if event.date? %>
+  <%= event.date.strftime('%b %d, %Y') if event.date? %>
   </div>
+ 
   <div class="card-body">
+
     <h5 class="card-title"><%= event.location %></h5>
     <p class="card-text">Created by <%=  event.creator.email %> </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <% unless event.creator == current_user %>
+      <%= link_to  "Attend", root_path, class:"btn btn-primary" %>
+    <% end %>  
   </div>
 </div>

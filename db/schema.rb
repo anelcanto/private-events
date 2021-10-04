@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_28_071113) do
+ActiveRecord::Schema.define(version: 2021_10_04_074201) do
+
+  create_table "event_attendances", force: :cascade do |t|
+    t.integer "attended_event_id_id", null: false
+    t.integer "event_attendee_id_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attended_event_id_id"], name: "index_event_attendances_on_attended_event_id_id"
+    t.index ["event_attendee_id_id"], name: "index_event_attendances_on_event_attendee_id_id"
+  end
 
 # Could not dump table "events" because of following StandardError
 #   Unknown type 'reference' for column 'creator_id'
@@ -27,4 +36,6 @@ ActiveRecord::Schema.define(version: 2021_09_28_071113) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "event_attendances", "attended_event_ids"
+  add_foreign_key "event_attendances", "event_attendee_ids"
 end
